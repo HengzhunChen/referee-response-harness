@@ -1,0 +1,3 @@
+interface:
+  display_name: "Referee Response Harness"
+  short_description: "Set up, audit, and upgrade paper revision workflows"

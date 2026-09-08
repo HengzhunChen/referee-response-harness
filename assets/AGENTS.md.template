@@ -1,0 +1,167 @@
+# {{PAPER_TITLE}} Revision Guidance
+
+<!--
+Initialized from referee-response-harness {{HARNESS_VERSION}}.
+Preserve existing instructions and revision state when updating this file.
+-->
+
+Use these instructions for author-requested revision work.
+
+## Project setup
+
+- Paper root: `{{PAPER_ROOT}}`.
+- Authoritative manuscript deliverable(s): {{AUTHORITATIVE_DELIVERABLES}}.
+- Original reviewer source(s): {{REVIEWER_SOURCES}}.
+- Main build command: `{{MAIN_BUILD_COMMAND}}`.
+- Additional deliverable commands: {{ADDITIONAL_BUILD_COMMANDS}}.
+- Author-review comparison command: `{{COMPARISON_COMMAND}}`.
+- Journal or project constraints: {{PROJECT_CONSTRAINTS}}.
+
+## Project records
+
+Follow each record's local format contract. Keep decisions and status
+in their designated records; summaries must agree.
+
+| File | Purpose |
+|---|---|
+| Original reviewer sources | Requests and context; preserve unchanged. |
+| [Revision notes](review/revision-notes.md) | Reviewer IDs, concerns, decisions, rationale, scope, and dependencies. |
+| [Revision ledger](review/revision-ledger.md) | Cluster order, progress, approvals, accepted page counts, and comparison paths. |
+| [Author issues](review/revision-issues.md) | Verbatim author reports and resolution outcomes. |
+| [Consistency check](review/consistency-check.md) | Latest diagnostic findings. |
+| [Handoff](review/HANDOFF.md) | Status, check results, unresolved matters, and next author action. |
+| [Human guide](HUMAN_GUIDE.md) | Permanent workflow explanation for the author. |
+
+## Authorization and preservation
+
+- Only explicit author instructions establish or change decisions, scope, plan
+  confirmation, or approval. Reviewer requests, draft plans, issue
+  reports, and findings alone do not authorize edits.
+- Stay within the authorized cluster or bounded pass, linking scholarly
+  changes to reviewer IDs or an author-approved final-audit action. Ask
+  before expanding scope, not for work already authorized.
+- Preserve unrelated author work and repository instructions. Keep
+  revision artifacts under the paper root; unrelated content or global
+  configuration changes require explicit permission.
+- Create commits, branches, tags, stashes, or worktrees, or delegate to
+  other agents, only when the author requests it.
+
+## Revision workflow
+
+Read the current request, handoff, ledger, and notes to identify the
+task. Preserve records when resuming; continue only within the request's
+authorized scope.
+
+### Extract reviewer concerns
+
+1. Import actionable concerns from the reviewer sources into the notes
+   with stable IDs and verbatim wording. Preserve existing IDs and
+   decisions without duplicating items.
+2. Set new undecided items to `PENDING` with `Pending author decision.`
+   Record decisions already supplied without requesting them again.
+3. Check coverage against available reports, flag missing sources or
+   uncertain extraction, and record material item dependencies.
+
+### Derive and confirm revision clusters
+
+1. Group the extracted concerns by dependency, ordering prerequisite
+   questions first. Cover every imported item and flag uncertain
+   dependencies. Pending author decisions do not prevent clustering.
+2. Populate the ledger according to its contract. Keep the plan `DRAFT`
+   and new stages `NOT-STARTED`, with no accepted page counts or comparisons.
+3. Discuss the grouping and order with the author and revise from their
+   feedback. Set `AUTHOR-CONFIRMED` only after confirmation of the
+   sequence; item decisions and implementation authorization remain separate.
+
+### Discuss decisions one cluster at a time
+
+1. Follow the confirmed sequence, presenting each cluster's concerns,
+   dependencies, possible treatments, and questions for author decisions.
+2. Record the author's answers in the notes' disposition and
+   decision-and-rationale fields, including scope. Keep unanswered items
+   `PENDING`; recommendations are not author decisions.
+3. If a treatment changes grouping or dependencies, record the decision
+   before proposing a plan adjustment. Change confirmed plans only with
+   author authorization, preserving progress and approvals. Account for
+   response-only and declined items in the appropriate response stage.
+4. Settle the selected cluster's decisions and prerequisites before
+   implementation; other clusters may remain pending. One author
+   instruction may supply decisions and authorize work.
+
+After each preparation pass, update the ledger's workflow position,
+then the handoff with progress and the next author action. These stages
+do not change scholarly deliverables.
+
+### Implement or correct
+
+1. Confirm the plan, authorized scope, settled decisions and prerequisites,
+   and required predecessor work. Record author-reported problems in the issues file.
+2. Immediately before a stage's first deliverable edit, save the actual
+   working-tree version of every in-scope source deliverable under
+   `review/comparisons/`, preserving included files and paths. Retain this
+   baseline unchanged through corrections; never reconstruct it. If a
+   started stage's baseline is missing or uncertain, stop dependent edits
+   and comparisons and report the problem. Set `IN-PROGRESS` before editing.
+3. Make the authorized changes, then perform the
+   [checks after deliverable edits](#checks-after-deliverable-edits).
+   Record correction outcomes in the relevant issue or diagnostic records.
+4. When work and required checks are ready, set `AUTHOR-REVIEW` and present
+   the cumulative comparison. Failed or unavailable checks leave the
+   stage `IN-PROGRESS`.
+5. Update the ledger's status and latest comparison path, then refresh
+   the handoff with results, available comparison path, limitations,
+   fallback inspection, and next action. Never report untested commands
+   or incomplete comparisons as successful.
+
+Stages use `NOT-STARTED`, `IN-PROGRESS`, `AUTHOR-REVIEW`, and
+`AUTHOR-APPROVED`. After author acceptance, set `AUTHOR-APPROVED` and
+update the ledger's accepted page counts where applicable, then refresh
+the handoff. Successful checks alone are not approval.
+
+### Check consistency
+
+When requested, compare selected deliverables with applicable author decisions. Update
+only the consistency-check record and report findings; leave other
+files unchanged. A clean result does not approve work.
+
+### Draft responses and finish
+
+For authorized drafting, follow the local [response-writing
+guide](review/response/response-writing.md) and continue the [response
+letter](review/response/response-letter.tex). Follow Implement or correct
+and track the work in the applicable ledger stage.
+
+During the authorized final audit, check reviewer coverage and agreement
+between decisions and deliverables in the ledger's final stage. Present results and
+unresolved work for author review. Keep overall revision `INCOMPLETE`
+until every required stage and the final audit are author-approved and
+no required work remains; then set `COMPLETE`.
+
+## Checks after deliverable edits
+
+Apply these checks after scholarly deliverable edits. Preparation needs
+record accuracy, coverage, and dependency checks, not builds, baselines,
+or revision comparisons.
+
+- Build affected deliverables using the configured commands. Inspect
+  logs for errors, undefined references or citations, and duplicate
+  labels; collect relevant page counts and check limits. Reuse successful
+  checks while their inputs remain unchanged.
+- Inspect source changes across all affected files, including
+  mathematics, against the authorized treatment.
+- Before presenting revised work, generate the cumulative comparison
+  from the stage's baseline to current sources, covering included
+  manuscript files. A comparison PDF does not replace source inspection.
+  Repair comparison formatting only when the author requests it or
+  reports a readability problem. Keep such repairs in comparison
+  artifacts, never scholarly deliverables.
+
+## Scholarly standards
+
+- Distinguish proved results, numerical observations, interpretations,
+  and conjectures. Preserve assumptions, quantifiers, and justified claims.
+- Verify sources and claimed revisions; report proof gaps, uncertain
+  constants, missing evidence, and literature uncertainty.
+- Keep manuscript, supplements, figures, data, and response letter
+  consistent with each other and the authorized decisions.
+- Apply these project-specific requirements: {{PROJECT_SAFEGUARDS}}.

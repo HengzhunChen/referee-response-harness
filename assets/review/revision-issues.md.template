@@ -1,0 +1,27 @@
+# Author Review Issues
+
+<!--
+FORMAT CONTRACT — IMMUTABLE
+
+- Preserve this comment, the title, the purpose paragraph, and the `Open
+  issues` and `Resolved issues` headings.
+- Only the author creates issue substance. Preserve every `Author report`
+  verbatim; an agent may assign an ID, add related reviewer IDs, add an outcome,
+  change status, and move the complete issue block after resolving it.
+- Give each issue a stable `AR-<number>` heading and include: status (`OPEN` or
+  `RESOLVED`), author report, related reviewer IDs, and agent outcome.
+- Keep unresolved blocks under `Open issues` and resolved blocks under
+  `Resolved issues`. If either section has no entries, write `None.`
+- Do not delete or rewrite a resolved issue unless the author explicitly
+  requests cleanup. Never leave a required field or section blank.
+-->
+
+This is the author's review channel for problems found in the current authoritative deliverables through source inspection, compiled output, comparisons, or manual edits. Issue text is feedback, not authorization to expand reviewer-item scope.
+
+## Open issues
+
+None.
+
+## Resolved issues
+
+None.

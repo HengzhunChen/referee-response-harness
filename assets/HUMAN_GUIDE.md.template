@@ -1,0 +1,95 @@
+# {{PAPER_TITLE}} Revision Harness Guide
+
+<!--
+Initialized from referee-response-harness {{HARNESS_VERSION}}.
+This is the permanent human guide. Current status belongs in review/HANDOFF.md.
+-->
+
+## Purpose
+
+This harness organizes the revision of `{{PAPER_TITLE}}` so that
+reviewer requests, author decisions, manuscript changes, verification
+evidence, and approvals remain traceable without being conflated.
+
+It does not decide how a reviewer request should be handled. The author
+retains control over mathematical content, scholarly claims, scope, and
+final approval.
+
+## File map
+
+| File | Purpose |
+|---|---|
+| `AGENTS.md` | Operational rules followed by Codex |
+| `HUMAN_GUIDE.md` | Permanent explanation of the workflow |
+| `review/revision-notes.md` | Reviewer concerns and canonical author decisions |
+| `review/revision-ledger.md` | Cluster plan, order, status, page counts, comparisons, and approvals |
+| `review/revision-issues.md` | Problems the author reports during review |
+| `review/consistency-check.md` | Latest replaceable read-only diagnostic |
+| `review/HANDOFF.md` | Current status and the next author action |
+| `review/comparisons/` | Immutable baselines and cumulative author-review comparisons |
+| `review/response/response-writing.md` | Response drafting and verification guidance |
+| `review/response/response-letter.tex` | Point-by-point response to the editor and reviewers |
+
+
+## Workflow
+
+```text
+Reviewer sources
+      ↓
+Import concerns into revision-notes.md
+      ↓
+Group concerns by dependency into revision-ledger.md
+      ↓
+Author reviews and confirms the cluster sequence
+      ↓
+Discuss the next cluster and record the author's decisions in the notes
+      ↓
+Settle the selected cluster's decisions and prerequisites; authorize work
+      ↓
+Implement → build → inspect source diff → generate comparison
+      ↓
+AUTHOR-REVIEW
+      ├── author approves → AUTHOR-APPROVED → next cluster discussion
+      └── author reports a bounded correction → revise → AUTHOR-REVIEW
+      ↓
+Response materials and final global audit
+      ↓
+COMPLETE after explicit author approval
+```
+
+The agent first extracts concerns of referees and proposes clusters from
+their dependencies. 
+
+Follow the cluster sequence to discuss concerns and possible treatments
+with the agent. It records your decisions, rationale, and intended scope
+in the notes. 
+
+The consistency check is usually used after the author do some manual
+edition.
+
+The author can report a problem in ordinary language. The agent will
+preserve the report text in `revision-issues.md`, relate it to reviewer
+items, and wait for correction authorization when necessary.
+
+## Common requests
+
+Examples of clear instructions to Codex:
+
+- “Extract the reviewer comments and propose clusters in dependency
+  order. Leave undecided items pending and do not revise the
+  manuscript.”
+- “I confirm this cluster sequence. Walk me through the first cluster's
+  concerns and possible treatments so I can decide how to address them.”
+- “Record my decision for R1-03, but do not implement it yet.”
+- “I authorize implementation of Cluster 2.”
+- “The comparison changes the theorem more broadly than intended. Record
+  this issue and propose a bounded correction.”
+- “Run a consistency check for the author-approved clusters.”
+- “I approve this cluster. Advance the ledger and tell me the next
+  eligible action.”
+
+## Current status
+
+Read `review/HANDOFF.md` for the active or most recently completed pass,
+verification evidence, unresolved concerns, and the single next author
+action.

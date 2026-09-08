@@ -1,0 +1,23 @@
+\section{Least-squares summary}
+\label{sec:method}
+
+Let $n\geq 1$ be an integer and let $x_1,\ldots,x_n\in\mathbb{R}$.
+Define
+\[
+  \bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_i,
+  \qquad
+  F(a)=\sum_{i=1}^{n}(x_i-a)^2,
+  \quad a\in\mathbb{R}.
+\]
+
+\begin{proposition}
+\label{prop:mean}
+The arithmetic mean $\bar{x}$ minimizes $F$ over $\mathbb{R}$.
+\end{proposition}
+
+\begin{proof}
+Expanding the squares gives
+\[
+  F(a)=F(\bar{x})+n(a-\bar{x})^2\geq F(\bar{x}).
+\]
+\end{proof}

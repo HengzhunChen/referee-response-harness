@@ -1,0 +1,28 @@
+# macOS metadata
+.DS_Store
+._*
+
+# Editor swap and backup files
+*.swp
+*.swo
+*~
+
+# LaTeX build intermediates
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+*.synctex.gz(busy)
+*.bcf
+*.bbl
+*.blg
+*.run.xml
+
+*.pdf

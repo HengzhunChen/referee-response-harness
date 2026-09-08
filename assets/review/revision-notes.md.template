@@ -1,0 +1,37 @@
+# Reviewer Revision Notes
+
+<!--
+FORMAT CONTRACT — IMMUTABLE
+
+- Preserve this comment, the title, the purpose paragraph, reviewer headings,
+  and every reviewer-item ID heading. Never delete or renumber an imported
+  reviewer item.
+- Each reviewer item must retain exactly these required labeled fields:
+  `Reviewer concern`, `Disposition`, and `Decision and rationale`. It may also
+  include `Dependencies` when another reviewer item materially affects it.
+- Preserve each reviewer concern verbatim. Only an explicit author decision may
+  change an item's disposition or decision and rationale.
+- Use one disposition: `PENDING`, `ACCEPT`, `ACCEPT-PARTIALLY`, `CLARIFY`, or
+  `DECLINE`. A different vocabulary requires an explicit author-approved plan
+  change.
+- `Decision and rationale` is the sole canonical statement of the current
+  author decision. Keep only the current decision.
+- Do not store cluster status, command logs, build results, handoff text,
+  manuscript-location inventories, or response-letter drafts here.
+- Never leave a required field blank. Use `Pending author decision.` when the
+  author has not decided.
+-->
+
+This file is the authoritative current item-level record of reviewer concerns, dispositions, author decisions and rationales, and material reviewer-item dependencies. It contains neither workflow state nor revision history.
+
+## {{REVIEWER_HEADING}}
+
+### {{REVIEWER_ITEM_ID}} — {{REVIEWER_ITEM_TITLE}}
+
+**Reviewer concern.** {{VERBATIM_REVIEWER_CONCERN}}
+
+**Disposition.** `PENDING`
+
+**Decision and rationale.** Pending author decision.
+
+**Dependencies.** {{MATERIAL_REVIEWER_DEPENDENCIES}}

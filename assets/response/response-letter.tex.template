@@ -1,0 +1,67 @@
+% Instantiate during harness initialization; leave the response body empty.
+% Preserve an existing letter or required journal format instead of replacing it.
+% Replace all template tokens during initialization. Escape plain text metadata;
+% review mathematical comments and responses as LaTeX source.
+% Tokens:
+% PAPER_TITLE, AUTHORS: submission metadata (adapt for anonymous review).
+% MANUSCRIPT_ID: optional submission identifier; remove its command/use if absent.
+
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+% Reviewer comments are blue and author responses are red by default.
+% Labels also distinguish the two kinds of text in monochrome.
+\newif\ifresponsecolors
+\responsecolorstrue
+% Change the preceding line to \responsecolorsfalse to use monochrome.
+\definecolor{commentblue}{RGB}{25,76,140}
+\definecolor{responsered}{RGB}{150,32,42}
+\setlength{\emergencystretch}{3em}
+
+\newenvironment{reviewercomment}
+  {\begin{quote}\ifresponsecolors\color{commentblue}\fi
+   \noindent\textbf{Reviewer comment.}\ }
+  {\end{quote}}
+
+\newenvironment{authorresponse}
+  {\begin{quote}\ifresponsecolors\color{responsered}\fi
+   \noindent\textbf{Response.}\ }
+  {\end{quote}}
+
+\newcommand{\revisionlocation}[1]{\par\smallskip\noindent
+  \textbf{Location in the revised submission.}\ #1}
+\newcommand{\manuscriptid}{{{MANUSCRIPT_ID}}}
+
+\title{Response to the Reviewers\\[3pt]
+  ``{{PAPER_TITLE}}''}
+\author{{{AUTHORS}}}
+\date{}
+
+\begin{document}
+
+\maketitle
+\noindent\textbf{Manuscript ID:} \manuscriptid
+
+% Response body intentionally empty until authorized drafting.
+% Follow response-writing.md beside this letter (adapt if the guide is elsewhere).
+% Add a brief acknowledgment and a summary of verified changes.
+% Repeat sections and blocks below in the order of the original reports.
+% Use actual reviewer IDs in the source comments for traceability.
+%
+% \section*{Response to the reviewer}
+% Reviewer IDs:
+% \begin{reviewercomment}
+% Reproduce the original comment faithfully, including its mathematics.
+% \end{reviewercomment}
+%
+% \begin{authorresponse}
+% State the treatment, supported rationale, and evidence.
+% \revisionlocation{Verified location, or explicitly no manuscript change.}
+% \end{authorresponse}
+
+\end{document}

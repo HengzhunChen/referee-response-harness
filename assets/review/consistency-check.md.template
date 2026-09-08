@@ -1,0 +1,33 @@
+# Manuscript Consistency Check
+
+<!--
+FORMAT CONTRACT — IMMUTABLE
+
+- Preserve this comment, the title, the purpose paragraph, all metadata fields,
+  and the `Findings` and `Next action` headings.
+- Change only metadata values and the bodies of the two sections.
+- Use exactly one status: `IDLE`, `CLEAN`, or `FINDINGS`.
+- On every check, replace all prior mutable content. Use an ISO date and identify
+  the checked clusters and reviewer IDs precisely.
+- For each finding, use a stable `CC-<number>` heading and include: status
+  (`OPEN` or `RESOLVED`), reviewer ID, deliverable location, controlling
+  decision, observed deviation, bounded correction, and resolution outcome.
+- If no finding exists, write `None.` Never leave a required field blank.
+- After the author accepts a `CLEAN` report, or author-approves corrections
+  prompted by `FINDINGS`, reset the mutable report to `IDLE` without deleting
+  this structure.
+-->
+
+This is the replaceable, non-authoritative report for the latest read-only check of {{AUTHORITATIVE_DELIVERABLES}} against decisions already applicable under `revision-notes.md` and `revision-ledger.md`. It does not authorize scholarly changes.
+
+- **Status:** `IDLE`
+- **Checked scope:** None active.
+- **Check date:** Not applicable.
+
+## Findings
+
+None.
+
+## Next action
+
+Await an author-requested consistency check.

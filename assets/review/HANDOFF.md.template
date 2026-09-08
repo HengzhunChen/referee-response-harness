@@ -1,0 +1,37 @@
+# {{PAPER_TITLE}} Author Handoff
+
+<!--
+FORMAT CONTRACT — IMMUTABLE
+
+- Preserve this comment, the title, and the `Current status`, `Verification`,
+  `Unresolved concerns`, and `Next author action` headings in this order.
+- Replace every section body after each scholarly-deliverable pass or workflow
+  state transition. This file is a current handoff, not a historical log.
+- `Current status` identifies the active or most recently completed pass, its
+  ledger status, and the next eligible stage.
+- `Verification` gives build results, page counts when applicable, and at an
+  author-review checkpoint the exact latest comparison path. Use `Not
+  applicable.` when no review artifact exists.
+- `Unresolved concerns` contains only current concerns; write `None.` when none
+  remain. `Next author action` states one immediate action or decision.
+- This handoff summarizes state and never authorizes scholarly changes. Never
+  leave a required section blank.
+-->
+
+## Current status
+
+- The revision harness is initialized. Reviewer import and revision planning have not started; initialization authorizes no scholarly-deliverable work.
+
+## Verification
+
+- Harness structure and paths: {{HARNESS_VALIDATION_RESULT}}.
+- Main manuscript build: {{INITIAL_BUILD_RESULT}}.
+- Latest comparison: Not applicable.
+
+## Unresolved concerns
+
+{{UNRESOLVED_CONFIGURATION}}
+
+## Next author action
+
+- Review unresolved configuration and request reviewer import when the reports are available.

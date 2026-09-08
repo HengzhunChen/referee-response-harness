@@ -1,0 +1,57 @@
+# Reviewer Revision Ledger
+
+<!--
+FORMAT CONTRACT — IMMUTABLE
+
+- Preserve this comment, the title, the purpose paragraph, all section
+  headings, the plan/status vocabularies, the execution-order table columns,
+  and one row for every named cluster in the author-confirmed order.
+- During implementation and review, change only the values under `Current state` and the
+  `Status`, `Main pages`, and `Latest comparison` cells for the affected row.
+- Derive draft clusters from extracted concerns and their dependencies in
+  `revision-notes.md`; item decisions may remain `PENDING`. Account for every
+  imported item and order clusters so prerequisite questions are discussed
+  first. Do not treat clustering as acceptance of reviewer requests.
+- When the author requests planning, create or revise draft cluster rows and
+  their reviewer IDs and predecessors. Discuss the draft with the author and
+  update it from their feedback. Set `AUTHOR-CONFIRMED` only after the author
+  confirms the grouping and sequence; this does not settle item decisions or
+  authorize implementation. If later decisions change dependencies, propose
+  an adjustment and obtain author confirmation before changing the plan.
+  Preserve existing progress, approvals, and status vocabulary.
+- Track the current cluster discussion and missing decisions in `Workflow
+  position`; decision substance stays in the notes. Discussion alone leaves
+  new stages `NOT-STARTED`. Implementation requires settled decisions for the
+  selected items and their prerequisites, not every item in the revision.
+- Keep this file compact and current. Do not append narrative history,
+  decisions, handoff text, issue summaries, diagnostic findings, or command
+  logs. Never leave a required value blank; use `Not applicable` or an em dash.
+-->
+
+This is the compact operational index for the `{{PAPER_TITLE}}` revision. It records plan confirmation, current workflow position, execution order, cluster status, accepted page counts, comparison artifacts, and author approval.
+
+## Current state
+
+- **Plan status:** `DRAFT`.
+- **Workflow position:** Harness initialized; reviewer import and revision planning have not started.
+- **Overall revision:** `INCOMPLETE`.
+
+## Plan status vocabulary
+
+- `DRAFT`: planning has not started or the proposed organization awaits author confirmation; neither authorizes manuscript edits.
+- `AUTHOR-CONFIRMED`: the author accepted the grouping and sequence; item decisions may still be pending, and implementation also requires author authorization.
+
+## Cluster status vocabulary
+
+- `NOT-STARTED`: no authorized deliverable work has begun.
+- `IN-PROGRESS`: an authorized implementation or correction pass has begun and has not reached author review.
+- `AUTHOR-REVIEW`: the latest cumulative comparison is waiting for author inspection.
+- `AUTHOR-APPROVED`: the author explicitly accepted the cluster treatment.
+- `COMPLETE`: overall revision status only; the final global audit is author-approved and no required work remains.
+
+## Execution order
+
+| Stage | Reviewer IDs | Required predecessor | Status | Main pages | Latest comparison |
+|---|---|---|---|---:|---|
+| {{CLUSTER_NAME}} | {{CLUSTER_REVIEWER_IDS}} | {{CLUSTER_PREDECESSOR}} | NOT-STARTED | — | — |
+| Final response and global audit | All items | All revision clusters | NOT-STARTED | — | — |
